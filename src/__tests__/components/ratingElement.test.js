@@ -6,13 +6,13 @@ import { RatingElement } from '../../components/ratingElement';
 configure({ adapter: new Adapter() });
 
 describe('Rating element check', () => {
-  const props = { rating: 3 };
+  const props = { name: 'Test', rating: 3 };
   const element = shallow(<RatingElement {...props} />);
-  it('rednders properly', () => {
+  it('renders properly', () => {
     expect(element).toMatchSnapshot();
   });
 
   it('displays the rating from props', () => {
-    expect(element.find('.elementRating').text()).toEqual('Rating is: 3');
+    expect(element.find('.elementRating').props()['secondary']).toEqual('Rating is: 3');
   });
 });

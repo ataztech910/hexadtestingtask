@@ -1,6 +1,6 @@
 /* eslint-disable import/prefer-default-export */
 import {
-  SET_RATING, GET_RATINGS, GET_ALL, ACT_RANDOM_PROCESS, CHECK_PROCESS_STATUS, GET_BUTTON_STATUS,
+  SET_RATING, GET_RATINGS, GET_ALL, ACT_RANDOM_PROCESS, CHECK_PROCESS_STATUS,
 } from './constants';
 import service from '../services';
 
@@ -25,7 +25,4 @@ export const startRandomProcess = () => ({
 
 export const checkProcessStatus = () => ({
   type: CHECK_PROCESS_STATUS,
-});
-export const getButtonStatus = () => ({
-  type: GET_BUTTON_STATUS,
 });

@@ -1,7 +1,10 @@
 import React from 'react';
+import Button from '@material-ui/core/Button';
 
 const StartRandomRating = props => (
-  <button
+  <Button
+    variant="contained"
+    color="primary"
     type="button"
     onClick={(event) => {
       event.preventDefault();
@@ -9,7 +12,7 @@ const StartRandomRating = props => (
     }}
   >
     {props.state.startProcess ? 'Stop random rates' : 'Start random rates' }
-  </button>
+  </Button>
 );
 
 export default StartRandomRating;

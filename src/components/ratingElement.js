@@ -1,38 +1,42 @@
 import React from 'react';
+import IconButton from '@material-ui/core/IconButton';
+import Icon from '@material-ui/core/Icon';
+import ListItemAvatar from '@material-ui/core/ListItemAvatar';
+import Avatar from '@material-ui/core/Avatar';
+import ListItemText from '@material-ui/core/ListItemText';
+import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 
 export const RatingElement = props => (
-  <div className="element">
-    <div className="elementImage"><img alt={props.name} src={`https://picsum.photos/80/80?image=${props.imgId}`} /></div>
-    <div className="elementName">{ props.name }</div>
-    <div className="elementRating">
-        Rating is: { props.rating }
-    </div>
-    <div className="elementBtns">
-      <div className="up">
-        <button
-          type="button"
-          onClick={(event) => {
-            event.preventDefault();
-            props.setRating({ id: props.id, action: 1 });
-          }
-          }
-        >
-            Up rating
-        </button>
-      </div>
-      <div className="down">
-        <button
-          type="button"
-          onClick={(event) => {
-            event.preventDefault();
-            props.setRating({ id: props.id, action: -1 });
-          }
-        }
-        >
-            Down rating
-        </button>
-      </div>
-    </div>
-  </div>
+  <>
+    <ListItemAvatar>
+      <Avatar
+        alt={`Image for °${props.name}`}
+        src={`https://picsum.photos/80/80?image=${props.imgId}`}
+      />
+    </ListItemAvatar>
+    <ListItemText className="elementRating" primary={props.name} secondary={`Rating is: ${props.rating}`} />
+    <ListItemSecondaryAction>
+      <IconButton
+        color="primary"
+        component="span"
+        onClick={(event) => {
+          event.preventDefault();
+          props.setRating({ id: props.id, action: 1 });
+        }}
+      >
+        <Icon>thumb_up</Icon>
+      </IconButton>
+      <IconButton
+        color="primary"
+        component="span"
+        onClick={(event) => {
+          event.preventDefault();
+          props.setRating({ id: props.id, action: -1 });
+        }}
+      >
+        <Icon>thumb_down</Icon>
+      </IconButton>
+    </ListItemSecondaryAction>
+  </>
 );
 export default RatingElement;

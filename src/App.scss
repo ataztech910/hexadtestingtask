@@ -6,33 +6,22 @@ body{
     max-width: 90%;
     h1{
         color: #F4F3EE;
+        font-size: 5em;
+        line-height: 1.5;
     }
 }
-.rating-list{
-    padding: 0;
-}
+
 img{
     transition: .5s;
 }
 .element{
     background-color: #BCB8B1;
-    margin-bottom: 1rem;
-    display: flex;
-    max-height: 80px;
-    justify-content: space-between;
-    align-items: center;
-    padding: 5px;
     transition: .5s;
     &:hover{
         background-color: #8A817C;
-        img {
-            border-radius: 10px;
-        }
     }
     @media only screen and (max-width: 600px) {
         font-size: 0.7rem;
     }
-    &Image{
-        height: 80px;
-    }
+
 }

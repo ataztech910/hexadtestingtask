@@ -1,11 +1,13 @@
 import React from 'react';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
 import RatingElementContainer from '../containers/RatingElementConatainer';
 
 export const RatingList = list => (
-  <ul className="rating-list">
+  <List className="rating-list">
     {list.fetch.list.ratings && list.fetch.list.ratings
-      ? list.fetch.list.ratings.map(element => <RatingElementContainer key={`element-${element.id}`} {...element} />)
+      ? list.fetch.list.ratings.map(element => <ListItem alignItems="flex-start" className="element" key={`element-${element.id}`}><RatingElementContainer {...element} /></ListItem>)
       : 'No elements, pitty =('}
-  </ul>
+  </List>
 );
 export default RatingList;
