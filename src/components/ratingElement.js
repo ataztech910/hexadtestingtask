@@ -19,6 +19,7 @@ export const RatingElement = props => (
       <IconButton
         color="primary"
         component="span"
+        className="increaseRating"
         onClick={(event) => {
           event.preventDefault();
           props.setRating({ id: props.id, action: 1 });
@@ -28,6 +29,7 @@ export const RatingElement = props => (
       </IconButton>
       <IconButton
         color="primary"
+        className="decreaseRating"
         component="span"
         onClick={(event) => {
           event.preventDefault();

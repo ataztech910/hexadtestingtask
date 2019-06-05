@@ -12,7 +12,6 @@ import myTimer from './sagas';
 const sagaMiddleware = createSagaMiddleware();
 const store = configureStore([], sagaMiddleware);
 
-
 store.dispatch(RatingActions.fetchData());
 
 ReactDOM.render(

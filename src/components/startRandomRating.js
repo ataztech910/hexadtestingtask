@@ -6,6 +6,7 @@ const StartRandomRating = props => (
     variant="contained"
     color="primary"
     type="button"
+    className="randomRatingProcess"
     onClick={(event) => {
       event.preventDefault();
       props.startRandomProcess();

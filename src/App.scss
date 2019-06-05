@@ -1,5 +1,5 @@
 body{
-    background-color: #463F3A;
+    background-color: #211A1D;
 }
 .App{
     margin: 0 auto;
@@ -15,10 +15,10 @@ img{
     transition: .5s;
 }
 .element{
-    background-color: #BCB8B1;
+    background-color: #F8F0FB;
     transition: .5s;
     &:hover{
-        background-color: #8A817C;
+        background-color: #E0AFA0;
     }
     @media only screen and (max-width: 600px) {
         font-size: 0.7rem;

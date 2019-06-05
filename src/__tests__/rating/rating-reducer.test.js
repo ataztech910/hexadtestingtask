@@ -1,5 +1,5 @@
 import ratingReducer from '../../reducers/rating';
-import { SET_RATING } from '../../actions/constants';
+import { SET_RATING, GET_RATINGS, GET_ALL } from '../../actions/constants';
 
 describe('Rating Reducer ', () => {
   it('set a rating', () => {
@@ -8,5 +8,13 @@ describe('Rating Reducer ', () => {
       rating: 1,
     };
     expect(ratingReducer(undefined, { type: SET_RATING, rating })).toBeGreaterThan(rating.rating);
+  });
+
+  it('get a rating', () => {
+    const action = {
+      ratings: [],
+    };
+    expect(ratingReducer({}, { type: GET_RATINGS, ...action })).toEqual({});
+    expect(ratingReducer({}, { type: GET_ALL, ...action })).toEqual({});
   });
 });

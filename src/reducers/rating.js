@@ -9,8 +9,8 @@ const ratingReducer = (state = [], action) => {
       if (state.ratings) {
         state.ratings.map((element) => {
           if (element.id === action.rating.id) {
-            if (action.rating.action > 0) element.rating++;
-            else element.rating--;
+            if (action.rating.action > 0) element.rating += 1;
+            else element.rating -= 1;
           }
           return element;
         });
@@ -22,11 +22,13 @@ const ratingReducer = (state = [], action) => {
       }
       return defaultValue;
     case GET_RATINGS:
-      action.ratings.sort((a, b) => b.rating - a.rating);
-      return {
-        ...state,
-        ratings: [...state, ...action.ratings],
-      };
+      if (action.ratings && action.ratings.length > 0) {
+        action.ratings.sort((a, b) => b.rating - a.rating);
+        return {
+          ...state,
+          ratings: [...state, ...action.ratings],
+        };
+      } return state;
     case GET_ALL:
       action.ratings.sort((a, b) => b.rating - a.rating);
       return {
