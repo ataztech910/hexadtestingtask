@@ -13,6 +13,6 @@ describe('Rating element check', () => {
   });
 
   it('displays the rating from props', () => {
-    expect(element.find('.rating').text()).toEqual('Rating is: 3');
+    expect(element.find('.elementRating').text()).toEqual('Rating is: 3');
   });
 });

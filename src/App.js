@@ -1,10 +1,13 @@
 import React from 'react';
 import './App.scss';
-import RatingElement from './components/ratingElement';
+import RatingListContainer from './containers/RatingListContainer';
+import StartRandomContainer from './containers/StartRandomContainer';
 
 const App = () => (
   <div className="App">
-    <RatingElement />
+    <h1>Elements with ratings</h1>
+    <StartRandomContainer />
+    <RatingListContainer />
   </div>
 );
 
