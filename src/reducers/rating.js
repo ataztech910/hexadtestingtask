@@ -2,10 +2,11 @@ import {
   SET_RATING, GET_RATINGS, GET_ALL, ACT_RANDOM_PROCESS, CHECK_PROCESS_STATUS,
 } from '../actions/constants';
 
+let defaultValue = 0;
 const ratingReducer = (state = [], action) => {
   switch (action.type) {
     case SET_RATING:
-      const defaultValue = action.rating.rating + 1;
+      defaultValue = action.rating.rating + 1;
       if (state.ratings) {
         state.ratings.map((element) => {
           if (element.id === action.rating.id) {
